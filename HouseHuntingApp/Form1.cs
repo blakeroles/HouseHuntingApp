@@ -19,6 +19,7 @@ namespace HouseHuntingApp
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            House house1 = new House();
 
         }
     }

@@ -28,5 +28,10 @@ namespace HouseHuntingApp
             bathrooms = 99;
             carSpaces = 99;
         }
+
+        public string getLocation()
+        {
+            return this.location;
+        }
     }
 }
