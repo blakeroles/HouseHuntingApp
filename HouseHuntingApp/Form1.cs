@@ -26,16 +26,13 @@ namespace HouseHuntingApp
 
         private void connectToDB_Click(object sender, EventArgs e)
         {
-            // Connection properties
-            string connectionString;
-            SqlConnection cnn;
+            string connectionString = @"Data Source = DESKTOP - T7PKUAC\SQLEXPRESS; Initial Catalog = HouseHuntingDB; Integrated Security = True";
+            HouseHuntingDB houseDB = new HouseHuntingDB(connectionString);
 
-            // Connect to Database
-            connectionString = @"Data Source=DESKTOP-T7PKUAC\SQLEXPRESS;Initial Catalog=HouseHuntingDB;Integrated Security=True";
-            cnn = new SqlConnection(connectionString);
-            cnn.Open();
-            MessageBox.Show("Connection Open!");
-            cnn.Close();
+            foreach (House h in houseDB.Houses)
+            {
+                Console.WriteLine(h.type);
+            }
         }
     }
 }

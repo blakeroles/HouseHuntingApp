@@ -3,30 +3,35 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.Linq;
+using System.Data.Linq.Mapping;
 
 namespace HouseHuntingApp
 {
+    [Table( Name = "dbo.Houses")]
     class House
     {
         // Attributes
-        private string type;
-        private double price;
-        private string location;
-        private int postcode;
-        private int bedrooms;
-        private int bathrooms;
-        private int carSpaces;
-        private double latitude;
-        private double longitude;
-        private int priceRating;
-        private int houseRating;
-        private int safetyRating;
-        private int transportRating;
-        private int locationRating;
-        private int potentialRating;
-        private int totalRating;
-        private double distanceFromTeganWork;
+        [Column(IsPrimaryKey = true)]
+        private int HouseID { get; set; }
 
+        [Column] public string type { get; set; }
+        [Column] public double price { get; set; }
+        [Column] public string location { get; set; }
+        [Column] public int postcode { get; set; }
+        [Column] public int bedrooms { get; set; }
+        [Column] public int bathrooms { get; set; }
+        [Column] public int carSpaces { get; set; }
+        [Column] public double latitude { get; set; }
+        [Column] public double longitude { get; set; }
+        [Column] public int priceRating { get; set; }
+        [Column] public int houseRating { get; set; }
+        [Column] public int safetyRating { get; set; }
+        [Column] public int transportRating { get; set; }
+        [Column] public int locationRating { get; set; }
+        [Column] public int potentialRating { get; set; }
+        [Column] public int totalRating { get; set; }
+        [Column] public double distanceFromTeganWork { get; set; }
         // Constructor
         public House()
         {
@@ -49,9 +54,6 @@ namespace HouseHuntingApp
             distanceFromTeganWork = 999.99;
         }
 
-        public string getLocation()
-        {
-            return this.location;
-        }
+
     }
 }
