@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace HouseHuntingApp
 {
@@ -21,6 +22,20 @@ namespace HouseHuntingApp
         {
             House house1 = new House();
 
+        }
+
+        private void connectToDB_Click(object sender, EventArgs e)
+        {
+            // Connection properties
+            string connectionString;
+            SqlConnection cnn;
+
+            // Connect to Database
+            connectionString = @"Data Source=DESKTOP-T7PKUAC\SQLEXPRESS;Initial Catalog=HouseHuntingDB;Integrated Security=True";
+            cnn = new SqlConnection(connectionString);
+            cnn.Open();
+            MessageBox.Show("Connection Open!");
+            cnn.Close();
         }
     }
 }
