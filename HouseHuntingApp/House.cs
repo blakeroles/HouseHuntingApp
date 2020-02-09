@@ -16,6 +16,16 @@ namespace HouseHuntingApp
         private int bedrooms;
         private int bathrooms;
         private int carSpaces;
+        private double latitude;
+        private double longitude;
+        private int priceRating;
+        private int houseRating;
+        private int safetyRating;
+        private int transportRating;
+        private int locationRating;
+        private int potentialRating;
+        private int totalRating;
+        private double distanceFromTeganWork;
 
         // Constructor
         public House()
@@ -27,6 +37,16 @@ namespace HouseHuntingApp
             bedrooms = 99;
             bathrooms = 99;
             carSpaces = 99;
+            latitude = 99.9;
+            longitude = 99.9;
+            priceRating = 99;
+            houseRating = 99;
+            safetyRating = 99;
+            transportRating = 99;
+            locationRating = 99;
+            potentialRating = 99;
+            totalRating = 999;
+            distanceFromTeganWork = 999.99;
         }
 
         public string getLocation()
