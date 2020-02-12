@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="HouseHuntingDB" Class="HouseClassDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-T7PKUAC\SQLEXPRESS;Initial Catalog=HouseHuntingDB;Integrated Security=True" SettingsObjectName="HouseHuntingApp.Properties.Settings" SettingsPropertyName="HouseHuntingDBConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Houses" Member="Houses">
+    <Type Name="House">
+      <Column Name="HouseID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Type" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="Price" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Location" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Postcode" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Bedrooms" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Bathrooms" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Carspaces" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Latitude" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="Longitude" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="priceRating" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="houseRating" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="safetyRating" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="transportRating" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="locationRating" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="potentialRating" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="totalRating" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="distanceFromTeganWork" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+</Database>

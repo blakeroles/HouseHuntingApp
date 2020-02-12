@@ -8,11 +8,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Data.Linq;
 
 namespace HouseHuntingApp
 {
     public partial class Form1 : Form
     {
+        static string connectionString = @"Data Source = DESKTOP-T7PKUAC\SQLEXPRESS; Initial Catalog = HouseHuntingDB; Integrated Security = True";
+        SqlConnection con = new SqlConnection(connectionString);
+
         public Form1()
         {
             InitializeComponent();
@@ -20,19 +24,34 @@ namespace HouseHuntingApp
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            House house1 = new House();
+            HouseClassDataContext dc = new HouseClassDataContext(con);
+
+            updateTable(dc);
 
         }
 
-        private void connectToDB_Click(object sender, EventArgs e)
+        private void buttonAdd_Click(object sender, EventArgs e)
         {
-            string connectionString = @"Data Source = DESKTOP - T7PKUAC\SQLEXPRESS; Initial Catalog = HouseHuntingDB; Integrated Security = True";
-            HouseHuntingDB houseDB = new HouseHuntingDB(connectionString);
 
-            foreach (House h in houseDB.Houses)
-            {
-                Console.WriteLine(h.type);
-            }
+            this.Hide();
+            Form2 f2 = new Form2();
+            f2.ShowDialog();
+
+            HouseClassDataContext dc = new HouseClassDataContext(con);
+            House newHouse = new House();
+
+            
+
+        }
+
+        private void updateTable(HouseClassDataContext dc)
+        {
+            var SelectQuery =
+                from h in dc.GetTable<House>()
+                select h;
+
+            dataGridViewHouses.DataSource = SelectQuery;
+            
         }
     }
 }

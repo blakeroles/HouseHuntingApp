@@ -28,35 +28,72 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.connectToDB = new System.Windows.Forms.Button();
+            this.dataGridViewHouses = new System.Windows.Forms.DataGridView();
+            this.buttonAdd = new System.Windows.Forms.Button();
+            this.buttonUpdate = new System.Windows.Forms.Button();
+            this.buttonDelete = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewHouses)).BeginInit();
             this.SuspendLayout();
             // 
-            // connectToDB
+            // dataGridViewHouses
             // 
-            this.connectToDB.Location = new System.Drawing.Point(294, 210);
-            this.connectToDB.Name = "connectToDB";
-            this.connectToDB.Size = new System.Drawing.Size(75, 23);
-            this.connectToDB.TabIndex = 0;
-            this.connectToDB.Text = "Connect";
-            this.connectToDB.UseVisualStyleBackColor = true;
-            this.connectToDB.Click += new System.EventHandler(this.connectToDB_Click);
+            this.dataGridViewHouses.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewHouses.Location = new System.Drawing.Point(12, 12);
+            this.dataGridViewHouses.Name = "dataGridViewHouses";
+            this.dataGridViewHouses.Size = new System.Drawing.Size(1865, 541);
+            this.dataGridViewHouses.TabIndex = 0;
+            // 
+            // buttonAdd
+            // 
+            this.buttonAdd.Location = new System.Drawing.Point(577, 591);
+            this.buttonAdd.Name = "buttonAdd";
+            this.buttonAdd.Size = new System.Drawing.Size(164, 52);
+            this.buttonAdd.TabIndex = 1;
+            this.buttonAdd.Text = "Add";
+            this.buttonAdd.UseVisualStyleBackColor = true;
+            this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
+            // 
+            // buttonUpdate
+            // 
+            this.buttonUpdate.Location = new System.Drawing.Point(850, 591);
+            this.buttonUpdate.Name = "buttonUpdate";
+            this.buttonUpdate.Size = new System.Drawing.Size(164, 52);
+            this.buttonUpdate.TabIndex = 2;
+            this.buttonUpdate.Text = "Update";
+            this.buttonUpdate.UseVisualStyleBackColor = true;
+            // 
+            // buttonDelete
+            // 
+            this.buttonDelete.Location = new System.Drawing.Point(1124, 591);
+            this.buttonDelete.Name = "buttonDelete";
+            this.buttonDelete.Size = new System.Drawing.Size(164, 52);
+            this.buttonDelete.TabIndex = 3;
+            this.buttonDelete.Text = "Delete";
+            this.buttonDelete.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.connectToDB);
+            this.ClientSize = new System.Drawing.Size(1886, 686);
+            this.Controls.Add(this.buttonDelete);
+            this.Controls.Add(this.buttonUpdate);
+            this.Controls.Add(this.buttonAdd);
+            this.Controls.Add(this.dataGridViewHouses);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewHouses)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button connectToDB;
+        private System.Windows.Forms.DataGridView dataGridViewHouses;
+        private System.Windows.Forms.Button buttonAdd;
+        private System.Windows.Forms.Button buttonUpdate;
+        private System.Windows.Forms.Button buttonDelete;
     }
 }
 
