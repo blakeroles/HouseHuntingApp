@@ -191,5 +191,27 @@ namespace HouseHuntingApp
             Form1 f1 = new Form1();
             f1.ShowDialog();
         }
+
+        private void buttonClear_Click(object sender, EventArgs e)
+        {
+            textBoxHouseID.Text = "";
+            comboBoxType.ResetText();
+            textBoxPrice.Text = "";
+            textBoxLocation.Text = "";
+            textBoxPostcode.Text = "";
+            comboBoxBedrooms.ResetText();
+            comboBoxBathrooms.ResetText();
+            comboBoxCarspaces.ResetText();
+            textBoxLatitude.Text = "";
+            textBoxLongitude.Text = "";
+            comboBoxPriceRating.ResetText();
+            comboBoxHouseRating.ResetText();
+            comboBoxSafetyRating.ResetText();
+            comboBoxTransportRating.ResetText();
+            comboBoxLocationRating.ResetText();
+            comboBoxPotentialRating.ResetText();
+            textBoxTotalRating.Text = "";
+            textBoxDistanceFromWorkTegan.Text = "";
+        }
     }
 }
