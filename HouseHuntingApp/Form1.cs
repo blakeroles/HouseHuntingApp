@@ -26,7 +26,8 @@ namespace HouseHuntingApp
         {
             HouseClassDataContext dc = new HouseClassDataContext(con);
 
-            updateTable(dc);
+            IQueryable<House> houseQuery = SQLQueryClass.updateTable(dc);
+            dataGridViewHouses.DataSource = houseQuery;
 
         }
 
@@ -37,21 +38,8 @@ namespace HouseHuntingApp
             Form2 f2 = new Form2();
             f2.ShowDialog();
 
-            HouseClassDataContext dc = new HouseClassDataContext(con);
-            House newHouse = new House();
-
-            
-
+           
         }
 
-        private void updateTable(HouseClassDataContext dc)
-        {
-            var SelectQuery =
-                from h in dc.GetTable<House>()
-                select h;
-
-            dataGridViewHouses.DataSource = SelectQuery;
-            
-        }
     }
 }
