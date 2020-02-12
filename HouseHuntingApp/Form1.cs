@@ -41,5 +41,28 @@ namespace HouseHuntingApp
            
         }
 
+        private void buttonUpdate_Click(object sender, EventArgs e)
+        {
+            // This should update a row in the database / TBC
+        }
+
+        private void buttonDelete_Click(object sender, EventArgs e)
+        {
+
+            Console.WriteLine(dataGridViewHouses.CurrentCell.RowIndex);
+            HouseClassDataContext dc = new HouseClassDataContext(con);
+            House delHouse = dc.Houses.FirstOrDefault(house => house.HouseID.Equals(dataGridViewHouses.CurrentCell.RowIndex));
+            dc.Houses.DeleteOnSubmit(delHouse);
+            dc.SubmitChanges();
+
+            IQueryable<House> houseQuery = SQLQueryClass.updateTable(dc);
+            dataGridViewHouses.DataSource = houseQuery;
+
+        }
+
+        private void buttonExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

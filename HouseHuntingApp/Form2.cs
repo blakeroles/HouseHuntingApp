@@ -50,9 +50,12 @@ namespace HouseHuntingApp
             newHouse.totalRating = float.Parse(textBoxTotalRating.Text);
             newHouse.distanceFromTeganWork = float.Parse(textBoxDistanceFromWorkTegan.Text);
 
+            dc.Houses.InsertOnSubmit(newHouse);
+            dc.SubmitChanges();
 
-
-
+            this.Hide();
+            Form1 f1 = new Form1();
+            f1.ShowDialog();
 
         }
     }
