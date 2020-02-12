@@ -14,8 +14,8 @@ namespace HouseHuntingApp
 {
     public partial class Form1 : Form
     {
-        static string connectionString = @"Data Source = DESKTOP-T7PKUAC\SQLEXPRESS; Initial Catalog = HouseHuntingDB; Integrated Security = True";
-        SqlConnection con = new SqlConnection(connectionString);
+        
+        SqlConnection con = new SqlConnection(SQLQueryClass.connectionString);
 
         public Form1()
         {

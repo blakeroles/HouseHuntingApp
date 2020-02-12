@@ -58,22 +58,15 @@
             this.textBoxPrice = new System.Windows.Forms.TextBox();
             this.textBoxTotalRating = new System.Windows.Forms.TextBox();
             this.comboBoxType = new System.Windows.Forms.ComboBox();
-            this.comboBoxTeganPriceRating = new System.Windows.Forms.ComboBox();
-            this.comboBoxTeganHouseRating = new System.Windows.Forms.ComboBox();
-            this.comboBoxTeganSafetyRating = new System.Windows.Forms.ComboBox();
-            this.comboBoxTeganTransportRating = new System.Windows.Forms.ComboBox();
-            this.comboBoxTeganLocationRating = new System.Windows.Forms.ComboBox();
-            this.comboBoxTeganPotentialRating = new System.Windows.Forms.ComboBox();
+            this.comboBoxPriceRating = new System.Windows.Forms.ComboBox();
+            this.comboBoxHouseRating = new System.Windows.Forms.ComboBox();
+            this.comboBoxSafetyRating = new System.Windows.Forms.ComboBox();
+            this.comboBoxTransportRating = new System.Windows.Forms.ComboBox();
+            this.comboBoxLocationRating = new System.Windows.Forms.ComboBox();
+            this.comboBoxPotentialRating = new System.Windows.Forms.ComboBox();
             this.comboBoxCarspaces = new System.Windows.Forms.ComboBox();
             this.comboBoxBathrooms = new System.Windows.Forms.ComboBox();
             this.comboBoxBedrooms = new System.Windows.Forms.ComboBox();
-            this.comboBoxBlakePriceRating = new System.Windows.Forms.ComboBox();
-            this.comboBoxBlakeHouseRating = new System.Windows.Forms.ComboBox();
-            this.comboBoxBlakeSafetyRating = new System.Windows.Forms.ComboBox();
-            this.comboBoxBlakeTransportRating = new System.Windows.Forms.ComboBox();
-            this.comboBoxBlakeLocationRating = new System.Windows.Forms.ComboBox();
-            this.comboBoxBlakePotentialRating = new System.Windows.Forms.ComboBox();
-            this.labelBlakeRatings = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // titleForm2Label
@@ -264,6 +257,7 @@
             this.buttonCalcTotalRating.TabIndex = 19;
             this.buttonCalcTotalRating.Text = "Calculate Total Rating";
             this.buttonCalcTotalRating.UseVisualStyleBackColor = true;
+            this.buttonCalcTotalRating.Click += new System.EventHandler(this.buttonCalcTotalRating_Click);
             // 
             // buttonAdd
             // 
@@ -273,6 +267,7 @@
             this.buttonAdd.TabIndex = 20;
             this.buttonAdd.Text = "Add";
             this.buttonAdd.UseVisualStyleBackColor = true;
+            this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
             // 
             // buttonClear
             // 
@@ -342,62 +337,106 @@
             // comboBoxType
             // 
             this.comboBoxType.FormattingEnabled = true;
+            this.comboBoxType.Items.AddRange(new object[] {
+            "Apartment",
+            "Townhouse",
+            "House"});
             this.comboBoxType.Location = new System.Drawing.Point(244, 100);
             this.comboBoxType.Name = "comboBoxType";
             this.comboBoxType.Size = new System.Drawing.Size(174, 21);
             this.comboBoxType.TabIndex = 30;
             // 
-            // comboBoxTeganPriceRating
+            // comboBoxPriceRating
             // 
-            this.comboBoxTeganPriceRating.FormattingEnabled = true;
-            this.comboBoxTeganPriceRating.Location = new System.Drawing.Point(244, 389);
-            this.comboBoxTeganPriceRating.Name = "comboBoxTeganPriceRating";
-            this.comboBoxTeganPriceRating.Size = new System.Drawing.Size(174, 21);
-            this.comboBoxTeganPriceRating.TabIndex = 31;
+            this.comboBoxPriceRating.FormattingEnabled = true;
+            this.comboBoxPriceRating.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"});
+            this.comboBoxPriceRating.Location = new System.Drawing.Point(244, 389);
+            this.comboBoxPriceRating.Name = "comboBoxPriceRating";
+            this.comboBoxPriceRating.Size = new System.Drawing.Size(174, 21);
+            this.comboBoxPriceRating.TabIndex = 31;
             // 
-            // comboBoxTeganHouseRating
+            // comboBoxHouseRating
             // 
-            this.comboBoxTeganHouseRating.FormattingEnabled = true;
-            this.comboBoxTeganHouseRating.Location = new System.Drawing.Point(244, 420);
-            this.comboBoxTeganHouseRating.Name = "comboBoxTeganHouseRating";
-            this.comboBoxTeganHouseRating.Size = new System.Drawing.Size(174, 21);
-            this.comboBoxTeganHouseRating.TabIndex = 32;
+            this.comboBoxHouseRating.FormattingEnabled = true;
+            this.comboBoxHouseRating.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"});
+            this.comboBoxHouseRating.Location = new System.Drawing.Point(244, 420);
+            this.comboBoxHouseRating.Name = "comboBoxHouseRating";
+            this.comboBoxHouseRating.Size = new System.Drawing.Size(174, 21);
+            this.comboBoxHouseRating.TabIndex = 32;
             // 
-            // comboBoxTeganSafetyRating
+            // comboBoxSafetyRating
             // 
-            this.comboBoxTeganSafetyRating.FormattingEnabled = true;
-            this.comboBoxTeganSafetyRating.Location = new System.Drawing.Point(244, 459);
-            this.comboBoxTeganSafetyRating.Name = "comboBoxTeganSafetyRating";
-            this.comboBoxTeganSafetyRating.Size = new System.Drawing.Size(174, 21);
-            this.comboBoxTeganSafetyRating.TabIndex = 33;
+            this.comboBoxSafetyRating.FormattingEnabled = true;
+            this.comboBoxSafetyRating.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"});
+            this.comboBoxSafetyRating.Location = new System.Drawing.Point(244, 459);
+            this.comboBoxSafetyRating.Name = "comboBoxSafetyRating";
+            this.comboBoxSafetyRating.Size = new System.Drawing.Size(174, 21);
+            this.comboBoxSafetyRating.TabIndex = 33;
             // 
-            // comboBoxTeganTransportRating
+            // comboBoxTransportRating
             // 
-            this.comboBoxTeganTransportRating.FormattingEnabled = true;
-            this.comboBoxTeganTransportRating.Location = new System.Drawing.Point(244, 490);
-            this.comboBoxTeganTransportRating.Name = "comboBoxTeganTransportRating";
-            this.comboBoxTeganTransportRating.Size = new System.Drawing.Size(174, 21);
-            this.comboBoxTeganTransportRating.TabIndex = 34;
+            this.comboBoxTransportRating.FormattingEnabled = true;
+            this.comboBoxTransportRating.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"});
+            this.comboBoxTransportRating.Location = new System.Drawing.Point(244, 490);
+            this.comboBoxTransportRating.Name = "comboBoxTransportRating";
+            this.comboBoxTransportRating.Size = new System.Drawing.Size(174, 21);
+            this.comboBoxTransportRating.TabIndex = 34;
             // 
-            // comboBoxTeganLocationRating
+            // comboBoxLocationRating
             // 
-            this.comboBoxTeganLocationRating.FormattingEnabled = true;
-            this.comboBoxTeganLocationRating.Location = new System.Drawing.Point(244, 522);
-            this.comboBoxTeganLocationRating.Name = "comboBoxTeganLocationRating";
-            this.comboBoxTeganLocationRating.Size = new System.Drawing.Size(174, 21);
-            this.comboBoxTeganLocationRating.TabIndex = 35;
+            this.comboBoxLocationRating.FormattingEnabled = true;
+            this.comboBoxLocationRating.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"});
+            this.comboBoxLocationRating.Location = new System.Drawing.Point(244, 522);
+            this.comboBoxLocationRating.Name = "comboBoxLocationRating";
+            this.comboBoxLocationRating.Size = new System.Drawing.Size(174, 21);
+            this.comboBoxLocationRating.TabIndex = 35;
             // 
-            // comboBoxTeganPotentialRating
+            // comboBoxPotentialRating
             // 
-            this.comboBoxTeganPotentialRating.FormattingEnabled = true;
-            this.comboBoxTeganPotentialRating.Location = new System.Drawing.Point(244, 551);
-            this.comboBoxTeganPotentialRating.Name = "comboBoxTeganPotentialRating";
-            this.comboBoxTeganPotentialRating.Size = new System.Drawing.Size(174, 21);
-            this.comboBoxTeganPotentialRating.TabIndex = 36;
+            this.comboBoxPotentialRating.FormattingEnabled = true;
+            this.comboBoxPotentialRating.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"});
+            this.comboBoxPotentialRating.Location = new System.Drawing.Point(244, 551);
+            this.comboBoxPotentialRating.Name = "comboBoxPotentialRating";
+            this.comboBoxPotentialRating.Size = new System.Drawing.Size(174, 21);
+            this.comboBoxPotentialRating.TabIndex = 36;
             // 
             // comboBoxCarspaces
             // 
             this.comboBoxCarspaces.FormattingEnabled = true;
+            this.comboBoxCarspaces.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3"});
             this.comboBoxCarspaces.Location = new System.Drawing.Point(244, 287);
             this.comboBoxCarspaces.Name = "comboBoxCarspaces";
             this.comboBoxCarspaces.Size = new System.Drawing.Size(174, 21);
@@ -406,6 +445,10 @@
             // comboBoxBathrooms
             // 
             this.comboBoxBathrooms.FormattingEnabled = true;
+            this.comboBoxBathrooms.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3"});
             this.comboBoxBathrooms.Location = new System.Drawing.Point(244, 260);
             this.comboBoxBathrooms.Name = "comboBoxBathrooms";
             this.comboBoxBathrooms.Size = new System.Drawing.Size(174, 21);
@@ -414,90 +457,31 @@
             // comboBoxBedrooms
             // 
             this.comboBoxBedrooms.FormattingEnabled = true;
+            this.comboBoxBedrooms.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"});
             this.comboBoxBedrooms.Location = new System.Drawing.Point(244, 228);
             this.comboBoxBedrooms.Name = "comboBoxBedrooms";
             this.comboBoxBedrooms.Size = new System.Drawing.Size(174, 21);
             this.comboBoxBedrooms.TabIndex = 39;
-            // 
-            // comboBoxBlakePriceRating
-            // 
-            this.comboBoxBlakePriceRating.FormattingEnabled = true;
-            this.comboBoxBlakePriceRating.Location = new System.Drawing.Point(468, 389);
-            this.comboBoxBlakePriceRating.Name = "comboBoxBlakePriceRating";
-            this.comboBoxBlakePriceRating.Size = new System.Drawing.Size(174, 21);
-            this.comboBoxBlakePriceRating.TabIndex = 40;
-            // 
-            // comboBoxBlakeHouseRating
-            // 
-            this.comboBoxBlakeHouseRating.FormattingEnabled = true;
-            this.comboBoxBlakeHouseRating.Location = new System.Drawing.Point(468, 420);
-            this.comboBoxBlakeHouseRating.Name = "comboBoxBlakeHouseRating";
-            this.comboBoxBlakeHouseRating.Size = new System.Drawing.Size(174, 21);
-            this.comboBoxBlakeHouseRating.TabIndex = 41;
-            // 
-            // comboBoxBlakeSafetyRating
-            // 
-            this.comboBoxBlakeSafetyRating.FormattingEnabled = true;
-            this.comboBoxBlakeSafetyRating.Location = new System.Drawing.Point(468, 459);
-            this.comboBoxBlakeSafetyRating.Name = "comboBoxBlakeSafetyRating";
-            this.comboBoxBlakeSafetyRating.Size = new System.Drawing.Size(174, 21);
-            this.comboBoxBlakeSafetyRating.TabIndex = 42;
-            // 
-            // comboBoxBlakeTransportRating
-            // 
-            this.comboBoxBlakeTransportRating.FormattingEnabled = true;
-            this.comboBoxBlakeTransportRating.Location = new System.Drawing.Point(468, 490);
-            this.comboBoxBlakeTransportRating.Name = "comboBoxBlakeTransportRating";
-            this.comboBoxBlakeTransportRating.Size = new System.Drawing.Size(174, 21);
-            this.comboBoxBlakeTransportRating.TabIndex = 43;
-            // 
-            // comboBoxBlakeLocationRating
-            // 
-            this.comboBoxBlakeLocationRating.FormattingEnabled = true;
-            this.comboBoxBlakeLocationRating.Location = new System.Drawing.Point(468, 522);
-            this.comboBoxBlakeLocationRating.Name = "comboBoxBlakeLocationRating";
-            this.comboBoxBlakeLocationRating.Size = new System.Drawing.Size(174, 21);
-            this.comboBoxBlakeLocationRating.TabIndex = 44;
-            // 
-            // comboBoxBlakePotentialRating
-            // 
-            this.comboBoxBlakePotentialRating.FormattingEnabled = true;
-            this.comboBoxBlakePotentialRating.Location = new System.Drawing.Point(468, 551);
-            this.comboBoxBlakePotentialRating.Name = "comboBoxBlakePotentialRating";
-            this.comboBoxBlakePotentialRating.Size = new System.Drawing.Size(174, 21);
-            this.comboBoxBlakePotentialRating.TabIndex = 45;
-            // 
-            // labelBlakeRatings
-            // 
-            this.labelBlakeRatings.AutoSize = true;
-            this.labelBlakeRatings.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.labelBlakeRatings.Location = new System.Drawing.Point(501, 355);
-            this.labelBlakeRatings.Name = "labelBlakeRatings";
-            this.labelBlakeRatings.Size = new System.Drawing.Size(108, 20);
-            this.labelBlakeRatings.TabIndex = 46;
-            this.labelBlakeRatings.Text = "Blake Ratings";
             // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(695, 681);
-            this.Controls.Add(this.labelBlakeRatings);
-            this.Controls.Add(this.comboBoxBlakePotentialRating);
-            this.Controls.Add(this.comboBoxBlakeLocationRating);
-            this.Controls.Add(this.comboBoxBlakeTransportRating);
-            this.Controls.Add(this.comboBoxBlakeSafetyRating);
-            this.Controls.Add(this.comboBoxBlakeHouseRating);
-            this.Controls.Add(this.comboBoxBlakePriceRating);
             this.Controls.Add(this.comboBoxBedrooms);
             this.Controls.Add(this.comboBoxBathrooms);
             this.Controls.Add(this.comboBoxCarspaces);
-            this.Controls.Add(this.comboBoxTeganPotentialRating);
-            this.Controls.Add(this.comboBoxTeganLocationRating);
-            this.Controls.Add(this.comboBoxTeganTransportRating);
-            this.Controls.Add(this.comboBoxTeganSafetyRating);
-            this.Controls.Add(this.comboBoxTeganHouseRating);
-            this.Controls.Add(this.comboBoxTeganPriceRating);
+            this.Controls.Add(this.comboBoxPotentialRating);
+            this.Controls.Add(this.comboBoxLocationRating);
+            this.Controls.Add(this.comboBoxTransportRating);
+            this.Controls.Add(this.comboBoxSafetyRating);
+            this.Controls.Add(this.comboBoxHouseRating);
+            this.Controls.Add(this.comboBoxPriceRating);
             this.Controls.Add(this.comboBoxType);
             this.Controls.Add(this.textBoxTotalRating);
             this.Controls.Add(this.textBoxPrice);
@@ -567,21 +551,14 @@
         private System.Windows.Forms.TextBox textBoxPrice;
         private System.Windows.Forms.TextBox textBoxTotalRating;
         private System.Windows.Forms.ComboBox comboBoxType;
-        private System.Windows.Forms.ComboBox comboBoxTeganPriceRating;
-        private System.Windows.Forms.ComboBox comboBoxTeganHouseRating;
-        private System.Windows.Forms.ComboBox comboBoxTeganSafetyRating;
-        private System.Windows.Forms.ComboBox comboBoxTeganTransportRating;
-        private System.Windows.Forms.ComboBox comboBoxTeganLocationRating;
-        private System.Windows.Forms.ComboBox comboBoxTeganPotentialRating;
+        private System.Windows.Forms.ComboBox comboBoxPriceRating;
+        private System.Windows.Forms.ComboBox comboBoxHouseRating;
+        private System.Windows.Forms.ComboBox comboBoxSafetyRating;
+        private System.Windows.Forms.ComboBox comboBoxTransportRating;
+        private System.Windows.Forms.ComboBox comboBoxLocationRating;
+        private System.Windows.Forms.ComboBox comboBoxPotentialRating;
         private System.Windows.Forms.ComboBox comboBoxCarspaces;
         private System.Windows.Forms.ComboBox comboBoxBathrooms;
         private System.Windows.Forms.ComboBox comboBoxBedrooms;
-        private System.Windows.Forms.ComboBox comboBoxBlakePriceRating;
-        private System.Windows.Forms.ComboBox comboBoxBlakeHouseRating;
-        private System.Windows.Forms.ComboBox comboBoxBlakeSafetyRating;
-        private System.Windows.Forms.ComboBox comboBoxBlakeTransportRating;
-        private System.Windows.Forms.ComboBox comboBoxBlakeLocationRating;
-        private System.Windows.Forms.ComboBox comboBoxBlakePotentialRating;
-        private System.Windows.Forms.Label labelBlakeRatings;
     }
 }
