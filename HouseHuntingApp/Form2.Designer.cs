@@ -67,6 +67,7 @@
             this.comboBoxCarspaces = new System.Windows.Forms.ComboBox();
             this.comboBoxBathrooms = new System.Windows.Forms.ComboBox();
             this.comboBoxBedrooms = new System.Windows.Forms.ComboBox();
+            this.buttonReturn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // titleForm2Label
@@ -468,11 +469,22 @@
             this.comboBoxBedrooms.Size = new System.Drawing.Size(174, 21);
             this.comboBoxBedrooms.TabIndex = 39;
             // 
+            // buttonReturn
+            // 
+            this.buttonReturn.Location = new System.Drawing.Point(418, 640);
+            this.buttonReturn.Name = "buttonReturn";
+            this.buttonReturn.Size = new System.Drawing.Size(116, 29);
+            this.buttonReturn.TabIndex = 40;
+            this.buttonReturn.Text = "Return";
+            this.buttonReturn.UseVisualStyleBackColor = true;
+            this.buttonReturn.Click += new System.EventHandler(this.buttonReturn_Click);
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(695, 681);
+            this.Controls.Add(this.buttonReturn);
             this.Controls.Add(this.comboBoxBedrooms);
             this.Controls.Add(this.comboBoxBathrooms);
             this.Controls.Add(this.comboBoxCarspaces);
@@ -560,5 +572,6 @@
         private System.Windows.Forms.ComboBox comboBoxCarspaces;
         private System.Windows.Forms.ComboBox comboBoxBathrooms;
         private System.Windows.Forms.ComboBox comboBoxBedrooms;
+        private System.Windows.Forms.Button buttonReturn;
     }
 }

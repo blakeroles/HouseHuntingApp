@@ -23,7 +23,22 @@ namespace HouseHuntingApp
 
         private void buttonCalcTotalRating_Click(object sender, EventArgs e)
         {
-            textBoxTotalRating.Text = "100";
+            int priceWeight = 10;
+            int houseWeight = 10;
+            int safteyWeight = 30;
+            int transportWeight = 20;
+            int locationWeight = 20;
+            int potentialWeight = 10;
+
+            double price = priceWeight * (Int32.Parse(comboBoxPriceRating.SelectedItem.ToString()) / 5.0);
+            double house = houseWeight * (Int32.Parse(comboBoxHouseRating.SelectedItem.ToString()) / 5.0);
+            double safety = safteyWeight * (Int32.Parse(comboBoxSafetyRating.SelectedItem.ToString()) / 5.0);
+            double transport = transportWeight * (Int32.Parse(comboBoxTransportRating.SelectedItem.ToString()) / 5.0);
+            double location = locationWeight * (Int32.Parse(comboBoxLocationRating.SelectedItem.ToString()) / 5.0);
+            double potential = potentialWeight * (Int32.Parse(comboBoxPotentialRating.SelectedItem.ToString()) / 5.0);
+
+            textBoxTotalRating.Text = (price + house + safety + transport + location + potential).ToString();
+
         }
 
         private void buttonAdd_Click(object sender, EventArgs e)
@@ -57,6 +72,13 @@ namespace HouseHuntingApp
             Form1 f1 = new Form1();
             f1.ShowDialog();
 
+        }
+
+        private void buttonReturn_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form1 f1 = new Form1();
+            f1.ShowDialog();
         }
     }
 }
