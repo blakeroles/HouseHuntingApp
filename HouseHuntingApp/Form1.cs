@@ -48,15 +48,21 @@ namespace HouseHuntingApp
 
         private void buttonDelete_Click(object sender, EventArgs e)
         {
+            if (String.IsNullOrEmpty(textBoxDeleteHouseID.Text))
+            {
+                MessageBox.Show("Please enter the House ID in the textbox!");
+            }
+            else
+            {
+                HouseClassDataContext dc = new HouseClassDataContext(con);
+                House delHouse = dc.Houses.FirstOrDefault(house => house.HouseID.Equals(Int32.Parse(textBoxDeleteHouseID.Text)));
+                dc.Houses.DeleteOnSubmit(delHouse);
+                dc.SubmitChanges();
 
-            Console.WriteLine(dataGridViewHouses.CurrentCell.RowIndex);
-            HouseClassDataContext dc = new HouseClassDataContext(con);
-            House delHouse = dc.Houses.FirstOrDefault(house => house.HouseID.Equals(Int32.Parse(textBoxDeleteHouseID.Text)));
-            dc.Houses.DeleteOnSubmit(delHouse);
-            dc.SubmitChanges();
+                IQueryable<House> houseQuery = SQLQueryClass.updateTable(dc);
+                dataGridViewHouses.DataSource = houseQuery;
+            }
 
-            IQueryable<House> houseQuery = SQLQueryClass.updateTable(dc);
-            dataGridViewHouses.DataSource = houseQuery;
 
         }
 
