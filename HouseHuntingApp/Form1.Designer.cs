@@ -33,6 +33,8 @@
             this.buttonUpdate = new System.Windows.Forms.Button();
             this.buttonDelete = new System.Windows.Forms.Button();
             this.buttonExit = new System.Windows.Forms.Button();
+            this.labelDeleteHouseID = new System.Windows.Forms.Label();
+            this.textBoxDeleteHouseID = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewHouses)).BeginInit();
             this.SuspendLayout();
             // 
@@ -66,7 +68,7 @@
             // 
             // buttonDelete
             // 
-            this.buttonDelete.Location = new System.Drawing.Point(1124, 591);
+            this.buttonDelete.Location = new System.Drawing.Point(1338, 591);
             this.buttonDelete.Name = "buttonDelete";
             this.buttonDelete.Size = new System.Drawing.Size(164, 52);
             this.buttonDelete.TabIndex = 3;
@@ -76,7 +78,7 @@
             // 
             // buttonExit
             // 
-            this.buttonExit.Location = new System.Drawing.Point(1407, 591);
+            this.buttonExit.Location = new System.Drawing.Point(1589, 591);
             this.buttonExit.Name = "buttonExit";
             this.buttonExit.Size = new System.Drawing.Size(155, 52);
             this.buttonExit.TabIndex = 4;
@@ -84,11 +86,29 @@
             this.buttonExit.UseVisualStyleBackColor = true;
             this.buttonExit.Click += new System.EventHandler(this.buttonExit_Click);
             // 
+            // labelDeleteHouseID
+            // 
+            this.labelDeleteHouseID.AutoSize = true;
+            this.labelDeleteHouseID.Location = new System.Drawing.Point(1053, 611);
+            this.labelDeleteHouseID.Name = "labelDeleteHouseID";
+            this.labelDeleteHouseID.Size = new System.Drawing.Size(89, 13);
+            this.labelDeleteHouseID.TabIndex = 5;
+            this.labelDeleteHouseID.Text = "Delete House ID:";
+            // 
+            // textBoxDeleteHouseID
+            // 
+            this.textBoxDeleteHouseID.Location = new System.Drawing.Point(1148, 608);
+            this.textBoxDeleteHouseID.Name = "textBoxDeleteHouseID";
+            this.textBoxDeleteHouseID.Size = new System.Drawing.Size(100, 20);
+            this.textBoxDeleteHouseID.TabIndex = 6;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1886, 686);
+            this.Controls.Add(this.textBoxDeleteHouseID);
+            this.Controls.Add(this.labelDeleteHouseID);
             this.Controls.Add(this.buttonExit);
             this.Controls.Add(this.buttonDelete);
             this.Controls.Add(this.buttonUpdate);
@@ -99,6 +119,7 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewHouses)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -109,6 +130,8 @@
         private System.Windows.Forms.Button buttonUpdate;
         private System.Windows.Forms.Button buttonDelete;
         private System.Windows.Forms.Button buttonExit;
+        private System.Windows.Forms.Label labelDeleteHouseID;
+        private System.Windows.Forms.TextBox textBoxDeleteHouseID;
     }
 }
 

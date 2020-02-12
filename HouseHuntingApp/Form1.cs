@@ -51,7 +51,7 @@ namespace HouseHuntingApp
 
             Console.WriteLine(dataGridViewHouses.CurrentCell.RowIndex);
             HouseClassDataContext dc = new HouseClassDataContext(con);
-            House delHouse = dc.Houses.FirstOrDefault(house => house.HouseID.Equals(dataGridViewHouses.CurrentCell.RowIndex));
+            House delHouse = dc.Houses.FirstOrDefault(house => house.HouseID.Equals(Int32.Parse(textBoxDeleteHouseID.Text)));
             dc.Houses.DeleteOnSubmit(delHouse);
             dc.SubmitChanges();
 
